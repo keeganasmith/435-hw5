@@ -112,7 +112,7 @@ int HyperCube_Class::split_list_index (int *list, int list_size, int pivot) {
     int first, last, mid;  
     first = 0; last = list_size; mid = (first+last)/2;
     while (first < last) {
-	if (list[mid] <= pivot) {
+	if (list[mid] > pivot) {
 	    first = mid+1; mid = (first+last)/2;
 	} else {
 	    last = mid; mid = (first+last)/2;
@@ -206,7 +206,7 @@ void HyperCube_Class::check_list() {
     if (list_size > 0) {
 	if (list[0] > min_nbr){
 		cout << "was line 208\n";
-		local_error = 1; 
+		
 	} 
 	for (j = 1; j < list_size; j++) {
 	    if (list[j] > list[j-1]){
