@@ -426,7 +426,6 @@ int main(int argc, char *argv[])
     MPI_Init(&argc,&argv);		// Initialize MPI
     MPI_Comm_size(MPI_COMM_WORLD,&num_procs);	// num_procs = number of processes
     MPI_Comm_rank(MPI_COMM_WORLD,&my_id);	// my_id = rank of this process
-	cout << num_procs << "\n";
     //  Check inputs
     if (argc != 3)  {
 	if (my_id == 0) 
