@@ -7,13 +7,13 @@
 #include <cstdio>
 #include <new>
 #include <mpi.h>
-
+#include <iostream>
 #define MAX_LIST_SIZE_PER_PROC	 1310720001
 
 #ifndef VERBOSE
 #define VERBOSE 0			// Use VERBOSE to control output 
 #endif
-
+using std::cout;
 int compare_int(const void *, const void *);
 
 class HyperCube_Class {
