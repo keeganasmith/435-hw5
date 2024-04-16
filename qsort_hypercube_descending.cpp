@@ -205,12 +205,12 @@ void HyperCube_Class::check_list() {
     local_error = 0;
     if (list_size > 0) {
 	if (max_nbr != -1 && list[0] > max_nbr) {
-		cout << "207: " << list[0];
+		//cout << "207: " << list[0];
 		local_error = 1;
 	} 
 	for (j = 1; j < list_size; j++) {
 	    if (list[j] > list[j-1]){
-			cout << "210\n";
+			//cout << "210\n";
 			local_error = 1;
 		}
 	}
@@ -432,7 +432,7 @@ int main(int argc, char *argv[])
     MPI_Init(&argc,&argv);		// Initialize MPI
     MPI_Comm_size(MPI_COMM_WORLD,&num_procs);	// num_procs = number of processes
     MPI_Comm_rank(MPI_COMM_WORLD,&my_id);	// my_id = rank of this process
-	cout << num_procs << "\n";
+	//cout << num_procs << "\n";
     //  Check inputs
     if (argc != 3)  {
 	if (my_id == 0) 
