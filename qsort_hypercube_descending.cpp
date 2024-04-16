@@ -204,9 +204,15 @@ void HyperCube_Class::check_list() {
     // (error is set to 1 if a pair of elements is not sorted correctly)
     local_error = 0;
     if (list_size > 0) {
-	if (list[0] > max_nbr) local_error = 1; 
+	if (list[0] > max_nbr) {
+		cout << "207\n";
+		local_error = 1;
+	} 
 	for (j = 1; j < list_size; j++) {
-	    if (list[j] > list[j-1]) local_error = 1;
+	    if (list[j] > list[j-1]){
+			cout << "210\n";
+			local_error = 1;
+		}
 	}
 	my_max = list[list_size-1];
     } else {					// Modified 6-21-2017
