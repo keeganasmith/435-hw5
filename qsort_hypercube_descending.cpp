@@ -204,7 +204,7 @@ void HyperCube_Class::check_list() {
     // (error is set to 1 if a pair of elements is not sorted correctly)
     local_error = 0;
     if (list_size > 0) {
-	if (list[0] > max_nbr) {
+	if (max_nbr != -1 && list[0] > max_nbr) {
 		cout << "207: " << list[0];
 		local_error = 1;
 	} 
