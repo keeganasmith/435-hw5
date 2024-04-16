@@ -8,7 +8,7 @@
 #include <new>
 #include <mpi.h>
 
-#define MAX_LIST_SIZE_PER_PROC	268435456
+#define MAX_LIST_SIZE_PER_PROC	 1310720001
 
 #ifndef VERBOSE
 #define VERBOSE 0			// Use VERBOSE to control output 
