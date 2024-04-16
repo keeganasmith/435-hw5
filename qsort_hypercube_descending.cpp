@@ -205,7 +205,7 @@ void HyperCube_Class::check_list() {
     local_error = 0;
     if (list_size > 0) {
 	if (list[0] > max_nbr) {
-		cout << "207\n";
+		cout << "207: " << list[0];
 		local_error = 1;
 	} 
 	for (j = 1; j < list_size; j++) {
