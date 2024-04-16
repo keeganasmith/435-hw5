@@ -313,7 +313,7 @@ void HyperCube_Class::HyperCube_QuickSort() {
 	// Communicate with neighbor along dimension k
 	nbr_k = neighbor_along_dim_k(k); 
 
-	if (nbr_k > my_id) {
+	if (nbr_k < my_id) {
 	    // MPI-2: Send number of elements greater than pivot
 
 	    // ***** Add MPI call here *****
