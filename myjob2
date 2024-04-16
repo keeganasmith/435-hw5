@@ -1,0 +1,30 @@
+#!/bin/bash
+# Template for a standard shell env
+
+#SBATCH --job-name=running_single_process
+#SBATCH --time=02:00:00
+#SBATCH --ntasks=96
+#SBATCH --ntasks-per-node=48
+#SBATCH --mem=360G
+#SBATCH --output=out.2
+#SBATCH --error=error.2
+
+  
+
+module purge
+module load intel/2022a
+mpiicpc -o qsort_hypercube.exe qsort_hypercube.cpp
+echo "one process, 20480000 size"
+mpirun -np 1 ./qsort_hypercube.exe 20480000 0
+echo "2 p, 40960000 size"
+mpirun -np 2 ./qsort_hypercube.exe 40960000 0
+echo "4 p, 81920000 size"
+mpirun -np 4 ./qsort_hypercube.exe 81920000 0
+echo "8 p, 163840000 size"
+mpirun -np 8 ./qsort_hypercube.exe 163840000 0
+echo "16 p, 327680000 size"
+mpirun -np 16 ./qsort_hypercube.exe 327680000 0
+echo "32 p, 655360000 size"
+mpirun -np 32 ./qsort_hypercube.exe 655360000 0
+echo "64 p, 1310720000 size"
+mpirun -np 64 ./qsort_hypercube.exe 1310720000 0
