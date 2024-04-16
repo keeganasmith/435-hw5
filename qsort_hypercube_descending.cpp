@@ -475,9 +475,9 @@ int main(int argc, char *argv[])
     // Check if list has been sorted correctly
     HyperCube.check_list();
 
-    if (VERBOSE > 2) {
+    
 	HyperCube.print_list();
-    }
+    
 
     MPI_Finalize();				// Finalize MPI
 }
