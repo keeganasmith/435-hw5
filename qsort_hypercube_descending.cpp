@@ -112,7 +112,7 @@ int HyperCube_Class::split_list_index (int *list, int list_size, int pivot) {
     int first, last, mid;  
     first = 0; last = list_size; mid = (first+last)/2;
     while (first < last) {
-	if (list[mid] > pivot) {
+	if (list[mid] <= pivot) {
 	    first = mid+1; mid = (first+last)/2;
 	} else {
 	    last = mid; mid = (first+last)/2;
@@ -313,7 +313,7 @@ void HyperCube_Class::HyperCube_QuickSort() {
 	// Communicate with neighbor along dimension k
 	nbr_k = neighbor_along_dim_k(k); 
 
-	if (nbr_k > my_id) {
+	if (nbr_k < my_id) {
 	    // MPI-2: Send number of elements greater than pivot
 
 	    // ***** Add MPI call here *****
@@ -475,9 +475,9 @@ int main(int argc, char *argv[])
     // Check if list has been sorted correctly
     HyperCube.check_list();
 
-    
+    if (VERBOSE > 2) {
 	HyperCube.print_list();
-    
+    }
 
     MPI_Finalize();				// Finalize MPI
 }
