@@ -314,7 +314,7 @@ void HyperCube_Class::HyperCube_QuickSort() {
 	nbr_k = neighbor_along_dim_k(k); 
 
 	if (nbr_k > my_id) {
-	    // MPI-2: Send number of elements less than pivot
+	    // MPI-2: Send number of elements greater than pivot
 
 	    // ***** Add MPI call here *****
 
@@ -475,9 +475,9 @@ int main(int argc, char *argv[])
     // Check if list has been sorted correctly
     HyperCube.check_list();
 
-    
+    if (VERBOSE > 2) {
 	HyperCube.print_list();
-    
+    }
 
     MPI_Finalize();				// Finalize MPI
 }
